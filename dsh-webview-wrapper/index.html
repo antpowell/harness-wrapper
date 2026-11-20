@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DSH WebView</title>
+    <link rel="stylesheet" href="/src/styles.css" />
+  </head>
+  <body>
+    <div id="app">
+      <div class="loading-screen" id="loadingScreen">
+        <div class="spinner"></div>
+        <div class="loading-text">Connecting to DSH...</div>
+        <div class="loading-status" id="loadingStatus">Initializing</div>
+      </div>
+
+      <div class="config-panel" id="configPanel">
+        <h2>DSH Endpoint Configuration</h2>
+        <p style="color: #888; font-size: 14px; margin-bottom: 10px">
+          DSH will be started automatically. If it fails, enter the URL manually.
+        </p>
+        <div class="error-message" id="errorMessage" style="display: none"></div>
+        <button id="openLogButton" class="secondary-button" style="display: none">Open Harness Log</button>
+        <label for="endpointInput">Or enter a complete authenticated URL:</label>
+        <input type="text" id="endpointInput" placeholder="http://127.0.0.1:3080/?token=..." value="" />
+        <button id="connectButton">Connect Manually</button>
+      </div>
+    </div>
+
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>

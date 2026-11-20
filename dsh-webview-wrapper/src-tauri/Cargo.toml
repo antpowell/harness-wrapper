@@ -1,0 +1,27 @@
+[package]
+name = "dsh-webview-wrapper"
+version = "0.1.0"
+description = "A lightweight WebView2 wrapper for DSH local build"
+authors = ["DSH Team"]
+edition = "2021"
+rust-version = "1.70"
+
+[build-dependencies]
+tauri-build = { version = "2.0.0", features = [] }
+
+[dependencies]
+tauri = { version = "2.0.0", features = ["tray-icon", "image-png"] }
+tauri-plugin-shell = "2.0.0"
+tauri-plugin-single-instance = "2.0.0"
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+reqwest = { version = "0.12", features = ["json"] }
+tokio = { version = "1", features = ["full"] }
+anyhow = "1.0"
+dirs = "5.0"
+url = "2"
+rfd = "0.15"
+
+[features]
+default = ["custom-protocol"]
+custom-protocol = ["tauri/custom-protocol"]
